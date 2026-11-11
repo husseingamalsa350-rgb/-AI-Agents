@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AgentTeam</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside id="sidebar">
+      <h1>AgentTeam</h1>
+      <div class="section-head"><span>Agents</span><button id="new-agent" title="New agent">+</button></div>
+      <ul id="agent-list"></ul>
+      <div class="section-head"><span>Channels</span><button id="new-channel" title="New channel">+</button></div>
+      <ul id="channel-list"></ul>
+    </aside>
+
+    <main>
+      <header id="chat-head">
+        <button id="menu" title="Conversations">☰</button>
+        <div id="chat-title"></div>
+        <div id="chat-actions"></div>
+      </header>
+      <div id="messages"></div>
+      <form id="composer">
+        <textarea id="input" rows="1" dir="auto" placeholder="Message…"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </main>
+
+    <dialog id="agent-dialog">
+      <form method="dialog" id="agent-form">
+        <h2 id="agent-dialog-title">New agent</h2>
+        <div class="row">
+          <label class="narrow">Icon <input name="emoji" maxlength="8" value="🤖" /></label>
+          <label>Name <input name="name" maxlength="40" required /></label>
+        </div>
+        <label>Persona <textarea name="persona" rows="4" dir="auto" placeholder="Who is this agent? How should it behave?"></textarea></label>
+        <div class="row">
+          <label>Provider <select name="provider"></select></label>
+          <label>Model <input name="model" placeholder="CLI default" /></label>
+        </div>
+        <menu>
+          <button type="button" class="danger" id="agent-delete">Delete</button>
+          <span class="spacer"></span>
+          <button type="button" data-close>Cancel</button>
+          <button type="submit" class="primary">Save</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <dialog id="channel-dialog">
+      <form method="dialog" id="channel-form">
+        <h2>New channel</h2>
+        <label>Name <input name="name" maxlength="40" required placeholder="launch-plan" /></label>
+        <fieldset>
+          <legend>Members</legend>
+          <div id="channel-members"></div>
+        </fieldset>
+        <menu>
+          <span class="spacer"></span>
+          <button type="button" data-close>Cancel</button>
+          <button type="submit" class="primary">Create</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>

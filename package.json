@@ -1,0 +1,9 @@
+{
+  "name": "agent-team",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local chat app for running a team of AI agents on your own Claude / Codex / Grok CLIs, with approval cards for shell commands.",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
